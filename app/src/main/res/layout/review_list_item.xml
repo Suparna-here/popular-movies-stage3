@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_reviewer_name_label"
+                style="@style/textImportantLabelStyle"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:layout_gravity="center"
+                android:text="@string/reviewer_name_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:text="Revir"/>
+
+            <TextView
+                android:id="@+id/tv_reviewer_name"
+                style="@style/textStyle"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toTopOf="@id/tv_reviewer_name_label"
+                app:layout_constraintBottom_toBottomOf="@id/tv_reviewer_name_label"
+                app:layout_constraintLeft_toRightOf="@+id/tv_reviewer_name_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_reviewer_name_label"
+                tools:text="ssssssss" />
+       </android.support.constraint.ConstraintLayout>
+
+       <TextView
+           android:id="@+id/tv_review_label"
+           style="@style/textLabelStyle"
+           android:text="@string/review_content" />
+
+       <TextView
+           android:id="@+id/tv_review_content"
+           style="@style/textStyle"
+           tools:text="Overview" />
+
+   </LinearLayout>

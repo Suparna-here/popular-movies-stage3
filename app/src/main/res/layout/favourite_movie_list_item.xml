@@ -1,0 +1,76 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    app:srcCompat="@color/cardview_shadow_start_color"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <!-- A CardView that contains a TextView -->
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="@color/colorPrimary"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="4dp">
+
+        <ImageView
+            android:id="@+id/iv_movie_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/movie_poster"
+            android:scaleType="centerCrop"
+            app:srcCompat="@color/cardview_shadow_start_color" />
+
+        <ImageView
+            android:id="@+id/iv_favourite_marked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start|bottom"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/favourite_marked"
+            android:padding="2dp"
+            android:layout_marginBottom="38dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_favorite_red_34dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/card_view"
+            tools:layout_constraintHorizontal_bias="8" />
+        <!--app:layout_constraintTop_toBottomOf="@id/iv_movie_thumbnail"
+        -->
+    </android.support.v7.widget.CardView>
+
+    <!--<ImageView
+        android:id="@+id/iv_favourite_marked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start|bottom"
+        app:layout_constraintBottom_toBottomOf="card_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view"
+        app:layout_constraintVertical_bias="0.0"
+        android:src="@drawable/ic_favorite_red_34dp"
+        android:contentDescription="@string/favourite_marked"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>-->
+
+    <TextView
+        android:id="@+id/tv_release_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|end|bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view"
+        app:layout_constraintVertical_bias="0.0"
+        style="@style/textStyle"
+        tools:text="ssss"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.udacity.popular_movies_stage3.ui.detail.DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/colorPrimary"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="4dp">
+
+            <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingTop="8dp"
+                android:paddingRight="12dp">
+
+                <ImageView
+                    android:id="@+id/iv_trailer_thumbnail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/movie_poster_in_details"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintWidth_default="percent"
+                    app:layout_constraintWidth_percent="0.6"
+                    app:srcCompat="@color/cardview_shadow_start_color" />
+
+                <TextView
+                    android:id="@+id/tv_vote_average_label"
+                    style="@style/textImportantLabelStyle"
+                    android:layout_gravity="center"
+                    android:text="@string/vote_average_label"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_reviewer_name"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/tv_reviewer_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_trailer_thumbnail" />
+
+                <TextView
+                    android:id="@+id/tv_vote_average_count"
+                    style="@style/textStyle"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_vote_average_label"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_vote_average_label"
+                    app:layout_constraintStart_toEndOf="@+id/tv_vote_average_label"
+                    app:layout_constraintTop_toBottomOf="@id/iv_trailer_thumbnail"
+                    app:layout_constraintTop_toTopOf="@id/tv_vote_average_label"
+                    tools:text="7.5" />
+                <!-- <ImageButton
+                     android:id="@+id/iv_favourite_button"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center_vertical|center_horizontal"
+                     android:src="@drawable/ic_favorite_border_black_34dp"
+                     app:layout_constraintTop_toBottomOf="@id/iv_trailer_thumbnail"
+                     app:layout_constraintRight_toRightOf="parent"/>-->
+
+                <!-- Floating action button that add Movie to Favourite Table
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/iv_favourite_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_favorite_border_black_34dp" />-->
+
+                <TextView
+                    android:id="@+id/tv_release_date_label"
+                    style="@style/textImportantLabelStyle"
+                    android:layout_gravity="center"
+                    android:text="@string/release_date_label"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_movie_release_date"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/tv_movie_release_date"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_vote_average_label" />
+
+                <TextView
+                    android:id="@+id/tv_movie_release_date"
+                    style="@style/textStyle"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_release_date_label"
+                    app:layout_constraintLeft_toRightOf="@id/tv_release_date_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_release_date_label"
+                    app:layout_constraintTop_toTopOf="@id/tv_release_date_label"
+                    tools:text="2017-01-08" />
+                <!-- Floating action button that add Movie to Favourite Table -->
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/iv_favourite_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_favorite_border_black_34dp" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_plot_synopsis_label"
+            style="@style/textLabelStyle"
+            android:text="@string/plot_synopsis_label" />
+
+        <TextView
+            android:id="@+id/tv_plot_synopsis_content"
+            style="@style/textStyle"
+            tools:text="Overview" />
+
+        <TextView
+            android:id="@+id/tv_trailer_label"
+            style="@style/textLabelStyle"
+            android:paddingTop="8dp"
+            android:text="@string/trailer_label" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_trailers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/tv_trailer_detail_error_message_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/trailer_detail_error_message"
+                android:textSize="20sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/tv_trailer_error_message_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/error_message"
+                android:textSize="20sp"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_review_label"
+            style="@style/textLabelStyle"
+            android:text="@string/review_label" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp" />
+
+            <TextView
+                android:id="@+id/tv_review_error_message_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/error_message"
+                android:textSize="20sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/tv_review_detail_error_message_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/review_detail_error_message"
+                android:textSize="20sp"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>
